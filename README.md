@@ -1,4 +1,4 @@
-![Image of SolarBullet Studios Logo](https://i.imgur.com/sZFebyJ.png | width=200)
+<img src="https://i.imgur.com/sZFebyJ.png" width="300">
 <h1>Treasure Hunters</h1>
 <h2>Created By: SolarBullet Studios</h2>
 <hr>
