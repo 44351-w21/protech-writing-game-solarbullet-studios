@@ -20,3 +20,14 @@
 <h2>Resource Links</h2>
 
 <hr>
+
+<h2>Milestones</h2>
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>Added README and .gitignore</td>
+    <td>Complete</td>
+  </tr>
