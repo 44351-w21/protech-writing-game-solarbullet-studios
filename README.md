@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/sZFebyJ.png" width="300">
+<img src="https://i.imgur.com/1mUYjF4.png" width="300">
 <h1>Treasure Hunters</h1>
 <h2>Created By: SolarBullet Studios</h2>
 <hr>
