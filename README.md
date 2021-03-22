@@ -32,3 +32,8 @@
     <td>Added README and .gitignore</td>
     <td>Complete</td>
   </tr>
+</table>
+<h2>Studio Credits </h2>
+  <ul>
+    <li> Logo: The design lord himself NOLAN HARLESS </li>
+  </ul>
