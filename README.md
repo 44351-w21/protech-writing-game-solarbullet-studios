@@ -32,6 +32,14 @@
     <td>Added README and .gitignore</td>
     <td>Complete</td>
   </tr>
+  <tr>
+    <td>Added game instructions to README.md</td>
+    <td>Complete</td>
+  </tr>
+  <tr>
+    <td>Uploaded in-game assets</td>
+    <td>Complete</td>
+  </tr>
 </table>
 <h2>Studio Credits </h2>
   <ul>
