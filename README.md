@@ -37,3 +37,27 @@
   <ul>
     <li> Logo: The design lord himself NOLAN HARLESS </li>
   </ul>
+<h2>Instructions Manual</h2>
+<p> The items you need are 50 cards, 2 6 sided die, and a gold coin. (All are provided).
+The game can be played with up to 4 players.</p>
+<ul>
+    <li> Players: </li>
+    <ul>
+        <li>Scuba Diver</li>
+        <li>Mermaid</li>
+        <li>Pirate</li>
+        <li>Treasure Hunter</li>
+    </ul>
+</ul>
+<ul>
+    <li> Set up </li>
+    <ol>
+        <li>Go to the link in the repo and click the start button</li>
+        <li>Select your character(s) depending on the number of players</li>
+        <li>The game will start</li>
+    </ol>
+    <li>Instructions</li>
+    <ol>The game will automatically roll the die for each player and the player with the highest roll will start first. It the instance of a tie a re roll will occur until a player is selected</ol>
+    <ol>On your turn click the die to roll and it move the number of spaces you rolled on the board</ol>
+</ul>
+
