@@ -57,7 +57,9 @@ The game can be played with up to 4 players.</p>
         <li>The game will start</li>
     </ol>
     <li>Instructions</li>
-    <ol>The game will automatically roll the die for each player and the player with the highest roll will start first. It the instance of a tie a re roll will occur until a player is selected</ol>
-    <ol>On your turn click the die to roll and it move the number of spaces you rolled on the board</ol>
+    <ol>
+      <li>The game will automatically roll the die for each player and the player with the highest roll will start first. It the instance of a tie a re roll will occur until a player is selected</li>
+    <li>On your turn click the die to roll and it move the number of spaces you rolled on the board</li>
+    </ol>
 </ul>
 
