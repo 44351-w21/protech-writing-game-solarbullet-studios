@@ -60,6 +60,9 @@ The game can be played with up to 4 players.</p>
     <ol>
       <li>The game will automatically roll the die for each player and the player with the highest roll will start first. It the instance of a tie a re roll will occur until a player is selected</li>
     <li>On your turn click the die to roll and it move the number of spaces you rolled on the board</li>
+    <li>Landing on a wave tile, draw a Tide card, click the gold coin to flip it, and depending on the outcome, if it's heads, follow the High Tide instructions, but if it's tails, follow the Low Tide instructions. If you run out of tide cards, reshuffle and continue.</li>
+    <li>Landing on a port tile, flip the coin, if it is heads, proceed to the next section of the board, if it is tails, lose your turn, start towards the next port on your next turn and repeat the process.</li>
+    <li> If you reach Treasure Island, you win! Congratulations!</li> 
     </ol>
 </ul>
 
