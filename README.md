@@ -19,7 +19,17 @@
 </ul>
 
 <h2>Resource Links</h2>
-
+<ul>
+  <li> 
+<a href="https://opengameart.org/content/crystal-game-pieces">Game Pieces asset - By: Varkalandar</a>
+  </li>
+  <li> 
+    <a href="https://opengameart.org/content/rotating-coin">Gold Coin asset - By: Puddin</a>
+  </li>
+  <li> 
+    <a href="https://opengameart.org/content/boardgame-pack">Cards pack asset - By: Kenney</a>
+  </li>
+</ul>
 <hr>
 
 <h2>Milestones</h2>
