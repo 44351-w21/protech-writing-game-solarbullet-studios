@@ -29,6 +29,12 @@
   <li> 
     <a href="https://opengameart.org/content/boardgame-pack">Cards pack asset - By: Kenney</a>
   </li>
+  <li> 
+    <a href="https://opengameart.org/content/blackmoor-tides-epic-pirate-battle-theme">Pirate Battle Theme audio asset - By: Matthew Pablo</a>
+  </li>
+  <li> 
+    <a href="https://opengameart.org/content/pirates-theme">Pirate Theme audio asset - By: rezoner</a>
+  </li>
 </ul>
 <hr>
 
