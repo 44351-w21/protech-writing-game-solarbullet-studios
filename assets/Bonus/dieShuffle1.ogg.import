@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dieShuffle1.ogg-8d05861526fc27eacdf51d89b1e2426c.oggstr"
+
+[deps]
+
+source_file="res://assets/Bonus/dieShuffle1.ogg"
+dest_files=[ "res://.import/dieShuffle1.ogg-8d05861526fc27eacdf51d89b1e2426c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
