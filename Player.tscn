@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/PNG/Pieces (White)/pieceWhite_border00.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 15.0572
 height = 0.0
 
 [node name="Player" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.518768, -2.85475 )
-texture = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -18,3 +18,5 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite"]
 position = Vector2( 0, 12.3473 )
 shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
