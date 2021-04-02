@@ -9,6 +9,7 @@ var space_num = 0
 var direction = Vector2.RIGHT
 var speed = 2
 var tilesize = 128
+var GameState = load("res://GameState.gd").new()
 signal movedone
 
 
