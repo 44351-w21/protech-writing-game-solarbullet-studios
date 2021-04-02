@@ -26,11 +26,11 @@ func move(spaces):
 	emit_signal("movedone")
 
 func movespace():
-	match space:
+	match space_num:
 	#ENTER IN GAME BOARD DIMENSIONS
 		0: direction = Vector2.RIGHT
 	## ADD EACH TIME BOARD CHANGES DIRECTION
-	space = (space * 1) % 36
+	space_num = (space_num * 1) % 36
 	tween.interpolate_property(self, "position", position,
-		position + direction * tilesize, 1.0/speed, Tween.TRANS_SINE, Tween,EASE_IN_OUT)
+		position + direction * tilesize, 1.0/speed, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.start()

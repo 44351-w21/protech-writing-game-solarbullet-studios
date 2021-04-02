@@ -96,7 +96,7 @@ __meta__ = {
 }
 
 [node name="Dice" type="AnimatedSprite" parent="Game/HUD/TurnScreen/HBoxContainer"]
-position = Vector2( 149.156, 19.884 )
+position = Vector2( 78.3652, 20.8279 )
 scale = Vector2( 0.472294, 0.465724 )
 frames = SubResource( 7 )
 
@@ -126,6 +126,9 @@ margin_left = 16.0
 margin_top = 13.0
 margin_right = 16.0
 margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SpaceLabel" type="Label" parent="Game/HUD"]
 margin_left = 20.0
