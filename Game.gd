@@ -1,16 +1,16 @@
 extends Node2D
 
-onready var p1 = $Player1
+onready var p1 = $Player
 onready var p2 = $Player2
 onready var p3 = $Player3
 onready var p4 = $Player4
 
-onready var player_label = $HUD/HBoxContainer/PlayerLabel
-onready var space_label = $HUD/HBoxContainer/SpaceLabel
-onready var diceButton= $HUD/HBoxContainer/DiceButton
-onready var endButton = $HUD/HBoxContainer/EndButton
+onready var player_label = $HUD/PlayerLabel
+onready var space_label = $HUD/SpaceLabel
+onready var diceButton= $DiceButton
+onready var endButton = $HUD/EndButton
 
-var next_player = ['', 'Player2', 'Player3', 'Player4', 'Player1']
+var next_player = ['', 'Player2', 'Player3', 'Player4', 'Player']
 var activePlayerIndex = 1
 
 var dice = 0
@@ -23,9 +23,9 @@ func _on_DiceButton_pressed():
 	dice = randi() % 6
 	$Dice.frame = dice
 	$DiceNoise.play()
-	yield(GameState.currentPlayer, "movedone")
-	diceButton.visible = false
-	endButton.visible = true
+#	yield(GameState.currentPlayer, "movedone")
+#	diceButton.visible = false
+#	endButton.visible = true
 
 func update_label():
 	player_label.text = GameState.currentPlayerLabel
@@ -34,7 +34,7 @@ func update_space_label(space):
 	space_label.text=str(space)
 
 func _on_EndButton_pressed():
-	$HUD/TurnSwitch/VBoxContainer/Label.text = next_player[activePlayerIndex] + "'s Turn"
+	$HUD/TurnSwitch/Label.text = next_player[activePlayerIndex] + "'s Turn"
 	#Bring up HUD TurnSwitch screen
 	$HUD/TurnSwitch.visible = true
 
