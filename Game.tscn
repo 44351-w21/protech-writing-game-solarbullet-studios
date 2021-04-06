@@ -94,6 +94,7 @@ text = "OK"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [node name="EndButton" type="Button" parent="Game/HUD"]
 visible = false
 margin_left = 234.081
