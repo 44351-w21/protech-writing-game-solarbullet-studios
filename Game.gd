@@ -21,8 +21,8 @@ func _ready():
 
 func _on_DiceButton_pressed():
 	dice = randi() % 6
-	$Dice.frame = dice
-	$DiceNoise.play()
+	$HUD/TurnScreen/HBoxContainer/Dice.frame = dice
+	$HUD/TurnScreen/HBoxContainer/DiceNoise.play()
 #	yield(GameState.currentPlayer, "movedone")
 #	diceButton.visible = false
 #	endButton.visible = true
