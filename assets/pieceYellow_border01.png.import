@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/pieceYellow_border01.png-273b46e2efa4c5ac3ec31342747961dc.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/tiles/Hex - IDland AI.jpg"
+source_file="res://assets/pieceYellow_border01.png"
+dest_files=[ "res://.import/pieceYellow_border01.png-273b46e2efa4c5ac3ec31342747961dc.stex" ]
+
 [params]
 
 compress/mode=0

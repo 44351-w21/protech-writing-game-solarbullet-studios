@@ -5,27 +5,32 @@ onready var p2 = $Player2
 onready var p3 = $Player3
 onready var p4 = $Player4
 
-onready var player_label = $HUD/PlayerLabel
-onready var space_label = $HUD/SpaceLabel
-onready var diceButton= $DiceButton
-onready var endButton = $HUD/EndButton
+onready var player_label = $HUD/HBox/Label
+onready var space_label = $HUD/HBox/SpaceLabel
+onready var diceButton= $HUD/HBox/DiceButton
+onready var endButton = $HUD/HBox/EndButton
 
 var next_player = ['', 'Player2', 'Player3', 'Player4', 'Player']
 var activePlayerIndex = 1
 
 var dice = 0
-var GameState = load("res://GameState.gd").new()
 
 func _ready():
 	randomize()
+	GameState.currentPlayer = p1
+	GameState.currentPlayerLabel = "Player 1"
+	$HUD/TurnScreen/BoxLayout/Label.visible = false
+	update_label()
 
 func _on_DiceButton_pressed():
 	dice = randi() % 6
-	$Dice.frame = dice
-	$DiceNoise.play()
-#	yield(GameState.currentPlayer, "movedone")
-#	diceButton.visible = false
-#	endButton.visible = true
+	diceButton.disabled = true
+	$HUD/Dice.frame = dice
+	$HUD/Dice/DiceNoise.play()
+	GameState.currentPlayer.move(dice + 1)
+	yield(GameState.currentPlayer, "movedone")
+	diceButton.visible = false
+	endButton.visible = true
 
 func update_label():
 	player_label.text = GameState.currentPlayerLabel
@@ -34,9 +39,9 @@ func update_space_label(space):
 	space_label.text=str(space)
 
 func _on_EndButton_pressed():
-	$HUD/TurnSwitch/Label.text = next_player[activePlayerIndex] + "'s Turn"
 	#Bring up HUD TurnSwitch screen
-	$HUD/TurnSwitch.visible = true
+	$HUD/TurnScreen/BoxLayout/Label.visible = true
+	$HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton.visible = true
 
 
 func _on_SwitchTurnButton_pressed():
@@ -54,5 +59,11 @@ func _on_SwitchTurnButton_pressed():
 		4: 
 			GameState.currentPlayer = p1
 			activePlayerIndex = 1
-	update_space_label(GameState.currentPlayer.space)
+	update_space_label(GameState.currentPlayer.space_num)
 	update_label()
+	
+	endButton.visible = false
+	diceButton.visible = true
+	diceButton.disabled = false
+	$HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton.visible = false
+	$HUD/TurnScreen/BoxLayout/Label.visible = false
