@@ -3,13 +3,12 @@ onready var sprite = $Sprite
 export var player = 0;
 onready var tween = $Tween
 
-var sprites = [preload("res://assets/PNG/Pieces (Black)/pieceBlack_border00.png"), preload("res://assets/PNG/Pieces (Green)/pieceGreen_border00.png"), preload("res://assets/PNG/Pieces (Red)/pieceRed_border00.png"),preload("res://assets/PNG/Pieces (Purple)/piecePurple_border00.png")]
+var sprites = [preload("res://assets/pieceYellow_border01.png"), preload("res://assets/pieceRed_border01.png"), preload("res://assets/piecePurple_border01.png"),preload("res://assets/pieceBlack_border01.png")]
 
 var space_num = 0
 var direction = Vector2.RIGHT
 var speed = 2
-var tilesize = 128
-var GameState = load("res://GameState.gd").new()
+var tilesize = 64
 signal movedone
 
 
@@ -18,6 +17,7 @@ func _ready():
 	sprite.texture = sprites[player]
 	position.x = 32
 	position.y = 64
+	
 func move(spaces):
 	for n in spaces:
 		movespace()
@@ -27,10 +27,14 @@ func move(spaces):
 
 func movespace():
 	match space_num:
-	#ENTER IN GAME BOARD DIMENSIONS
 		0: direction = Vector2.RIGHT
-	## ADD EACH TIME BOARD CHANGES DIRECTION
-	space_num = (space_num * 1) % 36
+		14: direction = Vector2.DOWN
+		20: direction = Vector2.LEFT
+		33: direction = Vector2.UP
+		37: direction = Vector2.RIGHT
+		48: direction = Vector2.DOWN
+		50: direction = Vector2.LEFT
+	space_num = (space_num + 1)
 	tween.interpolate_property(self, "position", position,
 		position + direction * tilesize, 1.0/speed, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.start()

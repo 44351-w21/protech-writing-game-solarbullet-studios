@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pieceBlack_border01.png-d5367c7ea12607f9821fdd86ca0fd311.stex"
+path="res://.import/pieceBlack_border01.png-2cf0d86870a12c4ec8d305b32609400d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PNG/Pieces (Black)/pieceBlack_border01.png"
-dest_files=[ "res://.import/pieceBlack_border01.png-d5367c7ea12607f9821fdd86ca0fd311.stex" ]
+source_file="res://assets/pieceBlack_border01.png"
+dest_files=[ "res://.import/pieceBlack_border01.png-2cf0d86870a12c4ec8d305b32609400d.stex" ]
 
 [params]
 

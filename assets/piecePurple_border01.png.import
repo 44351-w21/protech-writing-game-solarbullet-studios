@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pieceRed_border01.png-13da177c0997d08842cc6dae29f4b6d1.stex"
+path="res://.import/piecePurple_border01.png-7272c4f320de740e9c9074c255a89854.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PNG/Pieces (Red)/pieceRed_border01.png"
-dest_files=[ "res://.import/pieceRed_border01.png-13da177c0997d08842cc6dae29f4b6d1.stex" ]
+source_file="res://assets/piecePurple_border01.png"
+dest_files=[ "res://.import/piecePurple_border01.png-7272c4f320de740e9c9074c255a89854.stex" ]
 
 [params]
 
