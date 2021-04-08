@@ -5,7 +5,7 @@ onready var p2 = $Player2
 onready var p3 = $Player3
 onready var p4 = $Player4
 
-onready var player_label = $HUD/HBox/Label
+onready var player_label = $HUD/HBox/PlayerLabel
 onready var space_label = $HUD/HBox/SpaceLabel
 onready var diceButton= $HUD/HBox/DiceButton
 onready var endButton = $HUD/HBox/EndButton
@@ -25,8 +25,8 @@ func _ready():
 func _on_DiceButton_pressed():
 	dice = randi() % 6
 	diceButton.disabled = true
-	$HUD/Dice.frame = dice
-	$HUD/Dice/DiceNoise.play()
+	$HUD/HBox/Dice.frame = dice
+	$HUD/HBox/DiceNoise.play()
 	GameState.currentPlayer.move(dice + 1)
 	yield(GameState.currentPlayer, "movedone")
 	diceButton.visible = false

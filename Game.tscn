@@ -52,20 +52,15 @@ script = ExtResource( 4 )
 [node name="GameBoard" parent="Game" instance=ExtResource( 1 )]
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 16.6865, 68.3354 )
-player = null
 
 [node name="Player2" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 47.411, 70.1894 )
-player = null
+player = 1
 
 [node name="Player3" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 16.6865, 102.238 )
-player = null
+player = 2
 
 [node name="Player4" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 47.1461, 103.033 )
-player = null
+player = 3
 
 [node name="HUD" type="CanvasLayer" parent="Game"]
 
@@ -77,67 +72,65 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Game/HUD/TurnScreen"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="BoxLayout" type="VBoxContainer" parent="Game/HUD/TurnScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Game/HUD/TurnScreen/HBoxContainer"]
-margin_top = 13.0
-margin_bottom = 27.0
+[node name="Label" type="Label" parent="Game/HUD/TurnScreen/BoxLayout"]
+margin_right = 139.0
+margin_bottom = 14.0
+text = "Time To Switch Player"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SwitchTurnButton" type="Button" parent="Game/HUD/TurnScreen/HBoxContainer"]
-visible = false
-margin_left = 310.535
-margin_top = 8.49484
-margin_right = 350.535
-margin_bottom = 28.4948
+[node name="SwitchTurnButton" type="Button" parent="Game/HUD/TurnScreen/BoxLayout/Label"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = 10.2043
+margin_right = 20.0
+margin_bottom = 30.2043
 text = "OK"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EndButton" type="Button" parent="Game/HUD"]
-visible = false
-margin_left = 234.081
-margin_top = -0.943878
-margin_right = 301.081
-margin_bottom = 39.0561
-text = "End Turn"
+[node name="HBox" type="HBoxContainer" parent="Game/HUD"]
+margin_right = 203.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="PlayerLabel" type="Label" parent="Game/HUD"]
-margin_left = 16.0
+[node name="PlayerLabel" type="Label" parent="Game/HUD/HBox"]
 margin_top = 13.0
-margin_right = 16.0
 margin_bottom = 27.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SpaceLabel" type="Label" parent="Game/HUD"]
-margin_left = 20.0
-margin_top = 13.0
-margin_right = 20.0
-margin_bottom = 27.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Dice" type="AnimatedSprite" parent="Game"]
-position = Vector2( 78.3652, 20.8279 )
+[node name="Dice" type="AnimatedSprite" parent="Game/HUD/HBox"]
+position = Vector2( 178.529, 18.938 )
 scale = Vector2( 0.472294, 0.465724 )
 frames = SubResource( 7 )
 
-[node name="DiceNoise" type="AudioStreamPlayer2D" parent="Game"]
+[node name="DiceNoise" type="AudioStreamPlayer2D" parent="Game/HUD/HBox"]
 position = Vector2( 1.90735e-06, 1.90735e-06 )
 stream = ExtResource( 5 )
 
-[node name="DiceButton" type="Button" parent="Game"]
+[node name="DiceButton" type="Button" parent="Game/HUD/HBox"]
 margin_left = 4.0
 margin_right = 44.0
 margin_bottom = 40.0
@@ -145,6 +138,23 @@ text = "Roll!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Game/HUD/TurnScreen/HBoxContainer/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
-[connection signal="pressed" from="Game/HUD/EndButton" to="Game" method="_on_EndButton_pressed"]
-[connection signal="pressed" from="Game/DiceButton" to="Game" method="_on_DiceButton_pressed"]
+
+[node name="SpaceLabel" type="Label" parent="Game/HUD/HBox"]
+margin_left = 48.0
+margin_top = 13.0
+margin_right = 48.0
+margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndButton" type="Button" parent="Game/HUD/HBox"]
+visible = false
+margin_left = 234.081
+margin_top = -0.943878
+margin_right = 301.081
+margin_bottom = 39.0561
+text = "End Turn"
+[connection signal="pressed" from="Game/HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
+[connection signal="pressed" from="Game/HUD/HBox/DiceButton" to="Game" method="_on_DiceButton_pressed"]
+[connection signal="pressed" from="Game/HUD/HBox/EndButton" to="Game" method="_on_EndButton_pressed"]

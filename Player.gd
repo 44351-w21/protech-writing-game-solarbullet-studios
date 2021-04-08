@@ -1,9 +1,9 @@
 extends Node2D
 onready var sprite = $Sprite
-export var player = 0;
+export var player = 0
 onready var tween = $Tween
 
-var sprites = [preload("res://assets/pieceYellow_border01.png"), preload("res://assets/pieceRed_border01.png"), preload("res://assets/piecePurple_border01.png"),preload("res://assets/pieceBlack_border01.png")]
+var sprites = [preload("res://assets/pieceYellow_border00.png"), preload("res://assets/pieceRed_border01.png"), preload("res://assets/piecePurple_border01.png"),preload("res://assets/pieceBlack_border01.png")]
 
 var space_num = 0
 var direction = Vector2.RIGHT
