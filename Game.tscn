@@ -76,6 +76,9 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="Game/HUD/TurnScreen"]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Game/HUD/TurnScreen/HBoxContainer"]
 margin_top = 13.0
