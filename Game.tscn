@@ -53,15 +53,19 @@ script = ExtResource( 4 )
 
 [node name="Player" parent="Game" instance=ExtResource( 2 )]
 position = Vector2( 16.6865, 68.3354 )
+player = null
 
 [node name="Player2" parent="Game" instance=ExtResource( 2 )]
 position = Vector2( 47.411, 70.1894 )
+player = null
 
 [node name="Player3" parent="Game" instance=ExtResource( 2 )]
 position = Vector2( 16.6865, 102.238 )
+player = null
 
 [node name="Player4" parent="Game" instance=ExtResource( 2 )]
 position = Vector2( 47.1461, 103.033 )
+player = null
 
 [node name="HUD" type="CanvasLayer" parent="Game"]
 
