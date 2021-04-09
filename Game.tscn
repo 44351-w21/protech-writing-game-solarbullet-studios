@@ -169,6 +169,33 @@ __meta__ = {
 margin_right = 35.0
 margin_bottom = 40.0
 text = "Flip"
+
+[node name="WinScreen" type="ColorRect" parent="Game/HUD"]
+margin_left = 487.0
+margin_top = 272.0
+margin_right = 540.0
+margin_bottom = 310.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="WinLayout" type="VBoxContainer" parent="Game/HUD/WinScreen"]
+margin_top = -3.05176e-05
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinLabel" type="Label" parent="Game/HUD/WinScreen/WinLayout"]
+margin_right = 53.0
+margin_bottom = 31.0
+text = "You win!
+"
+align = 1
+valign = 1
 [connection signal="pressed" from="Game/HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/HBox/DiceButton" to="Game" method="_on_DiceButton_pressed"]
 [connection signal="pressed" from="Game/HUD/HBox/EndButton" to="Game" method="_on_EndButton_pressed"]

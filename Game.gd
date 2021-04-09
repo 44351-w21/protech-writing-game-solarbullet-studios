@@ -9,6 +9,10 @@ onready var player_label = $HUD/HBox/PlayerLabel
 onready var space_label = $HUD/HBox/SpaceLabel
 onready var diceButton= $HUD/HBox/DiceButton
 onready var endButton = $HUD/HBox/EndButton
+onready var flipButton = $HUD/CoinBox/CoinFlipBtn
+onready var switchLabel = $HUD/TurnScreen/BoxLayout/Label
+onready var switchButton = $HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton
+onready var winLabel = $HUD/WinScreen
 
 var next_player = ['', 'Player2', 'Player3', 'Player4', 'Player']
 var activePlayerIndex = 1
@@ -19,7 +23,9 @@ func _ready():
 	randomize()
 	GameState.currentPlayer = p1
 	GameState.currentPlayerLabel = "Player 1"
-	$HUD/TurnScreen/BoxLayout/Label.visible = false
+	switchLabel.visible = false
+	winLabel.visible = false
+	flipButton.visible = false
 	update_label()
 
 func _on_DiceButton_pressed():
@@ -40,8 +46,8 @@ func update_space_label(space):
 
 func _on_EndButton_pressed():
 	#Bring up HUD TurnSwitch screen
-	$HUD/TurnScreen/BoxLayout/Label.visible = true
-	$HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton.visible = true
+	switchLabel.visible = true
+	switchButton.visible = true
 
 
 func _on_SwitchTurnButton_pressed():
@@ -66,8 +72,8 @@ func _on_SwitchTurnButton_pressed():
 	diceButton.visible = true
 	diceButton.disabled = false
 	enableCoin()
-	$HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton.visible = false
-	$HUD/TurnScreen/BoxLayout/Label.visible = false
+	switchButton.visible = false
+	switchLabel.visible = false
 	
 func disableDiceBtn():
 	diceButton.disabled = true

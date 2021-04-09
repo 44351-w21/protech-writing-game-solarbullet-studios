@@ -38,19 +38,23 @@ func movespace():
 		7: 
 			can_move = false
 			get_node("..").disableDiceBtn()
+			get_node("..").flipButton.visible = true
 		14: direction = Vector2.DOWN
 		15:
 			can_move = false
 			get_node("..").disableDiceBtn()
+			get_node("..").flipButton.visible = true
 		20: direction = Vector2.LEFT
 		29:
 			can_move = false
 			get_node("..").disableDiceBtn()
+			get_node("..").flipButton.visible = true
 		33: direction = Vector2.UP
 		37: direction = Vector2.RIGHT
 		42:
 			can_move = false
 			get_node("..").disableDiceBtn()
+			get_node("..").flipButton.visible = true
 		48: direction = Vector2.DOWN
 		50: direction = Vector2.LEFT
 		51:
@@ -77,3 +81,5 @@ func _on_CoinFlipBtn_pressed():
 		get_node("..").invisibleDice()
 		get_node("..").visibleEnd()
 	emit_signal("movedone")
+func getNum():
+	return space_num
