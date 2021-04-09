@@ -8,6 +8,7 @@ var coin
 var can_move = true
 
 var sprites = [preload("res://assets/pieceYellow_border00.png"), preload("res://assets/pieceRed_border01.png"), preload("res://assets/piecePurple_border01.png"),preload("res://assets/pieceBlack_border01.png")]
+var GameState = preload("res://GameState.gd")
 
 var space_num = 0
 var direction = Vector2.RIGHT
