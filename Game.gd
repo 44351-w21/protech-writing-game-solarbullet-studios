@@ -5,10 +5,10 @@ onready var p2 = $Player2
 onready var p3 = $Player3
 onready var p4 = $Player4
 
-onready var player_label = $HUD/HBox/PlayerLabel
-onready var space_label = $HUD/HBox/SpaceLabel
-onready var diceButton= $HUD/HBox/DiceButton
-onready var endButton = $HUD/HBox/EndButton
+onready var player_label = $HUD/Hbox/PlayerLabel
+onready var space_label = $HUD/Hbox/SpaceLabel
+onready var diceButton= $HUD/Hbox/DiceButton
+onready var endButton = $HUD/Hbox/EndButton
 onready var flipButton = $HUD/CoinBox/CoinFlipBtn
 onready var switchLabel = $HUD/TurnScreen/BoxLayout/Label
 onready var switchButton = $HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton
@@ -30,8 +30,8 @@ func _ready():
 func _on_DiceButton_pressed():
 	dice = randi() % 6
 	diceButton.disabled = true
-	$HUD/HBox/Dice.frame = dice
-	$HUD/HBox/DiceNoise.play()
+	$HUD/Hbox/Dice.frame = dice
+	$HUD/Hbox/DiceNoise.play()
 	GameState.currentPlayer.move(dice + 1)
 	yield(GameState.currentPlayer, "movedone")
 	diceButton.visible = false

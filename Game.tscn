@@ -171,6 +171,29 @@ __meta__ = {
 margin_right = 67.0
 margin_bottom = 40.0
 text = "Flip Coin"
+
+[node name="WinScreen" type="ColorRect" parent="Game/HUD"]
+margin_left = 546.805
+margin_top = 270.883
+margin_right = 586.805
+margin_bottom = 310.883
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="WinLayout" type="VBoxContainer" parent="Game/HUD/WinScreen"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="WinLabel" type="Label" parent="Game/HUD/WinScreen/WinLayout"]
+margin_right = 56.0
+margin_bottom = 31.0
+text = "You Win!
+"
+align = 1
+valign = 1
 [connection signal="pressed" from="Game/HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/EndButton" to="Game" method="_on_EndButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/DiceButton" to="Game" method="_on_DiceButton_pressed"]
