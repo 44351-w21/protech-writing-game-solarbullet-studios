@@ -73,6 +73,15 @@ func _on_SwitchTurnButton_pressed():
 	enableCoin()
 	switchButton.visible = false
 	switchLabel.visible = false
+	if GameState.currentPlayer.can_move == true:
+		flipButton.visible = false
+		visibleDice()
+		invisibleEnd()
+	elif GameState.currentPlayer.can_move == false:
+		flipButton.visible = true
+		invisibleDice()
+		invisibleEnd()
+		
 	
 func disableDiceBtn():
 	diceButton.disabled = true

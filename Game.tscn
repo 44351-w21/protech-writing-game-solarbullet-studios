@@ -56,12 +56,15 @@ position = Vector2( 16.6865, 68.3354 )
 
 [node name="Player2" parent="Game" instance=ExtResource( 2 )]
 position = Vector2( 47.411, 70.1894 )
+player = 1
 
 [node name="Player3" parent="Game" instance=ExtResource( 2 )]
 position = Vector2( 16.6865, 102.238 )
+player = 2
 
 [node name="Player4" parent="Game" instance=ExtResource( 2 )]
 position = Vector2( 47.1461, 103.033 )
+player = 3
 
 [node name="HUD" type="CanvasLayer" parent="Game"]
 
@@ -115,6 +118,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SpaceLabel" type="Label" parent="Game/HUD/Hbox"]
+margin_top = 13.0
+margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="EndButton" type="Button" parent="Game/HUD/Hbox"]
 visible = false
 margin_left = 234.081
@@ -124,18 +134,10 @@ margin_bottom = 39.0561
 text = "End Turn"
 
 [node name="DiceButton" type="Button" parent="Game/HUD/Hbox"]
-margin_right = 40.0
+margin_left = 4.0
+margin_right = 44.0
 margin_bottom = 40.0
 text = "Roll!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SpaceLabel" type="Label" parent="Game/HUD/Hbox"]
-margin_left = 44.0
-margin_top = 13.0
-margin_right = 44.0
-margin_bottom = 27.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -150,7 +152,7 @@ __meta__ = {
 }
 
 [node name="Dice" type="AnimatedSprite" parent="Game/HUD/Hbox"]
-position = Vector2( 78.3652, 20.8279 )
+position = Vector2( 213.329, 17.8848 )
 scale = Vector2( 0.472294, 0.465724 )
 frames = SubResource( 7 )
 
@@ -197,3 +199,4 @@ valign = 1
 [connection signal="pressed" from="Game/HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/EndButton" to="Game" method="_on_EndButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/DiceButton" to="Game" method="_on_DiceButton_pressed"]
+[connection signal="pressed" from="Game/HUD/CoinBox/CoinFlipBtn" to="Game/Player" method="_on_CoinFlipBtn_pressed"]

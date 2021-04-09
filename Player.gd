@@ -5,7 +5,7 @@ onready var tween = $Tween
 
 var coin
 
-var can_move = true
+export var can_move = true
 
 var sprites = [preload("res://assets/pieceYellow_border00.png"), preload("res://assets/pieceRed_border01.png"), preload("res://assets/piecePurple_border01.png"),preload("res://assets/pieceBlack_border01.png")]
 
@@ -68,6 +68,12 @@ func movespace():
 
 
 
+
+
+func getNum():
+	return space_num
+
+
 func _on_CoinFlipBtn_pressed():
 	coin = randi() % 2
 	if coin == 0:
@@ -81,5 +87,4 @@ func _on_CoinFlipBtn_pressed():
 		get_node("..").invisibleDice()
 		get_node("..").visibleEnd()
 	emit_signal("movedone")
-func getNum():
-	return space_num
+
