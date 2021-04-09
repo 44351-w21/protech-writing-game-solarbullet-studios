@@ -16,7 +16,6 @@ onready var winLabel = $HUD/WinScreen
 
 var next_player = ['', 'Player2', 'Player3', 'Player4', 'Player']
 var activePlayerIndex = 1
-var GameState = preload("res://GameState.gd")
 var dice = 0
 
 func _ready():
