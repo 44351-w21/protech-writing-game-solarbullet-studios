@@ -77,9 +77,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -20.0
+margin_left = -69.5
 margin_top = -20.0
-margin_right = 20.0
+margin_right = 69.5
 margin_bottom = 20.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -121,11 +121,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Dice" type="AnimatedSprite" parent="Game/HUD/HBox"]
-position = Vector2( 178.529, 18.938 )
-scale = Vector2( 0.472294, 0.465724 )
-frames = SubResource( 7 )
-
 [node name="DiceNoise" type="AudioStreamPlayer2D" parent="Game/HUD/HBox"]
 position = Vector2( 1.90735e-06, 1.90735e-06 )
 stream = ExtResource( 5 )
@@ -139,6 +134,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="EndButton" type="Button" parent="Game/HUD/HBox"]
+visible = false
+margin_left = 234.081
+margin_top = -0.943878
+margin_right = 301.081
+margin_bottom = 39.0561
+text = "End Turn"
+
 [node name="SpaceLabel" type="Label" parent="Game/HUD/HBox"]
 margin_left = 48.0
 margin_top = 13.0
@@ -148,13 +151,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EndButton" type="Button" parent="Game/HUD/HBox"]
-visible = false
-margin_left = 234.081
-margin_top = -0.943878
-margin_right = 301.081
-margin_bottom = 39.0561
-text = "End Turn"
+[node name="Dice" type="AnimatedSprite" parent="Game/HUD/HBox"]
+position = Vector2( 215.987, 18.938 )
+scale = Vector2( 0.472294, 0.465724 )
+frames = SubResource( 7 )
+
+[node name="CoinBox" type="HBoxContainer" parent="Game/HUD"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -103.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CoinFlipBtn" type="Button" parent="Game/HUD/CoinBox"]
+margin_right = 35.0
+margin_bottom = 40.0
+text = "Flip"
 [connection signal="pressed" from="Game/HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/HBox/DiceButton" to="Game" method="_on_DiceButton_pressed"]
 [connection signal="pressed" from="Game/HUD/HBox/EndButton" to="Game" method="_on_EndButton_pressed"]
+[connection signal="pressed" from="Game/HUD/CoinBox/CoinFlipBtn" to="Game/Player" method="_on_CoinFlipBtn_pressed"]

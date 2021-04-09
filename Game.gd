@@ -36,7 +36,7 @@ func update_label():
 	player_label.text = GameState.currentPlayerLabel
 
 func update_space_label(space):
-	space_label.text=str(space)
+	space_label.text="Space: " + str(space)
 
 func _on_EndButton_pressed():
 	#Bring up HUD TurnSwitch screen
@@ -65,5 +65,27 @@ func _on_SwitchTurnButton_pressed():
 	endButton.visible = false
 	diceButton.visible = true
 	diceButton.disabled = false
+	enableCoin()
 	$HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton.visible = false
 	$HUD/TurnScreen/BoxLayout/Label.visible = false
+	
+func disableDiceBtn():
+	diceButton.disabled = true
+func enableDiceBtn():
+	diceButton.disabled = false
+func enableEnd():
+	endButton.disabled = false
+func disableEnd():
+	endButton.disabled = true
+func enableCoin():
+	$HUD/CoinBox/CoinFlipBtn.disabled = false
+func disableCoin():
+	$HUD/CoinBox/CoinFlipBtn.disabled = true
+func visibleDice():
+	diceButton.visible = true
+func invisibleDice():
+	diceButton.visible = false
+func visibleEnd():
+	endButton.visible = true
+func invisibleEnd():
+	endButton.visible = false
