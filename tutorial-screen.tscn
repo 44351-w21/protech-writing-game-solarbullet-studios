@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/tutorial-screen.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1031.0
+margin_bottom = 608.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 809.574
+margin_top = 11.1118
+margin_right = 1010.57
+margin_bottom = 74.1118
+text = "<- GO BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
