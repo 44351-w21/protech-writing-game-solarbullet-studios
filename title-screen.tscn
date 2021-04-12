@@ -22,10 +22,10 @@ scale = Vector2( 0.537495, 0.568372 )
 texture = ExtResource( 1 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 285.909
-margin_top = 400.612
-margin_right = 500.909
-margin_bottom = 472.612
+margin_left = 286.0
+margin_top = 401.0
+margin_right = 488.0
+margin_bottom = 480.0
 rect_pivot_offset = Vector2( 215, 10.8862 )
 text = "Start Game"
 __meta__ = {
@@ -34,9 +34,9 @@ __meta__ = {
 
 [node name="Button2" type="Button" parent="."]
 margin_left = 542.382
-margin_top = 401.453
+margin_top = 402.867
 margin_right = 757.382
-margin_bottom = 473.453
+margin_bottom = 474.867
 rect_pivot_offset = Vector2( 215, 10.8862 )
 text = "Tutorial"
 __meta__ = {
