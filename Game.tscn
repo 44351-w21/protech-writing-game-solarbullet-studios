@@ -192,7 +192,7 @@ text = "Flip Coin"
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Game/HUD/CoinBox"]
 position = Vector2( -537.093, 267.947 )
 frames = SubResource( 8 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="WinScreen" type="ColorRect" parent="Game/HUD"]
@@ -220,7 +220,7 @@ valign = 1
 
 [node name="Blackmoor-game" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
-volume_db = -9.087
+volume_db = -4.038
 [connection signal="pressed" from="Game/HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/EndButton" to="Game" method="_on_EndButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/DiceButton" to="Game" method="_on_DiceButton_pressed"]
