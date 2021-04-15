@@ -4,15 +4,19 @@ onready var p1 = $Player
 onready var p2 = $Player2
 onready var p3 = $Player3
 onready var p4 = $Player4
-
+onready var win = $HUD/WinBackground
+onready var HighTide = $HUD/HighCard
+onready var LowTide = $HUD/LowCard
+onready var HighLabel = $HUD/HighCard/HighLabel
+onready var LowLabel = $HUD/LowCard/LowLabel
 onready var player_label = $HUD/Hbox/PlayerLabel
 onready var space_label = $HUD/Hbox/SpaceLabel
 onready var diceButton= $HUD/Hbox/DiceButton
 onready var endButton = $HUD/Hbox/EndButton
-onready var flipButton = $HUD/CoinBox/CoinFlipBtn
-onready var switchLabel = $HUD/TurnScreen/BoxLayout/Label
-onready var switchButton = $HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton
-onready var winLabel = $HUD/WinScreen
+onready var flipButton = $HUD/CoinFlipBtn
+onready var switchLabel = $HUD/TurnScreen/Label
+onready var switchButton = $HUD/TurnScreen/Label/SwitchTurnButton
+onready var winLabel = $HUD/WinBackground/WinLabel
 
 var next_player = ['', 'Player2', 'Player3', 'Player4', 'Player']
 var activePlayerIndex = 1
@@ -22,10 +26,16 @@ func _ready():
 	randomize()
 	GameState.currentPlayer = p1
 	GameState.currentPlayerLabel = "Player 1"
-	switchLabel.visible = false
 	winLabel.visible = false
 	flipButton.visible = false
+	switchLabel.visible = false
+	invisibleTide()
 	update_label()
+	HighTide.visible = false
+	LowTide.visible = false
+	win.visible = false
+	$BlackmoorSong.play()
+	
 
 func _on_DiceButton_pressed():
 	dice = randi() % 6
@@ -45,6 +55,10 @@ func update_space_label(space):
 
 func _on_EndButton_pressed():
 	#Bring up HUD TurnSwitch screen
+	LowLabel.visible = false
+	HighLabel.visible = false
+	HighTide.visible = false
+	LowTide.visible = false
 	switchLabel.visible = true
 	switchButton.visible = true
 
@@ -92,9 +106,9 @@ func enableEnd():
 func disableEnd():
 	endButton.disabled = true
 func enableCoin():
-	$HUD/CoinBox/CoinFlipBtn.disabled = false
+	$HUD/CoinFlipBtn.disabled = false
 func disableCoin():
-	$HUD/CoinBox/CoinFlipBtn.disabled = true
+	$HUD/CoinFlipBtn.disabled = true
 func visibleDice():
 	diceButton.visible = true
 func invisibleDice():
@@ -103,3 +117,7 @@ func visibleEnd():
 	endButton.visible = true
 func invisibleEnd():
 	endButton.visible = false
+func invisibleTide():
+	$HUD/TideBtn.visible = false
+func visibleTide():
+	$HUD/TideBtn.visible = true

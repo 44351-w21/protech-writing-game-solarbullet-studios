@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://GameBoard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://assets/Coin/goldcoin-frame1.png" type="Texture" id=10]
 [ext_resource path="res://assets/Coin/goldcoin-frame4.png" type="Texture" id=11]
 [ext_resource path="res://assets/audio/Blackmoor Tides Loop.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/Cards/High-Tide.png" type="Texture" id=13]
+[ext_resource path="res://assets/Cards/Low-Tide.png" type="Texture" id=14]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -86,33 +88,26 @@ player = 3
 [node name="TurnScreen" type="ColorRect" parent="Game/HUD"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.75952
+margin_top = -1.54721
+margin_right = 1.75952
+margin_bottom = -1.54724
 color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BoxLayout" type="VBoxContainer" parent="Game/HUD/TurnScreen"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Game/HUD/TurnScreen/BoxLayout"]
-margin_right = 144.0
-margin_bottom = 14.0
+[node name="Label" type="Label" parent="Game/HUD/TurnScreen"]
+margin_left = 492.0
+margin_top = 280.0
+margin_right = 636.0
+margin_bottom = 294.0
 text = "Time to switch Players"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SwitchTurnButton" type="Button" parent="Game/HUD/TurnScreen/BoxLayout/Label"]
+[node name="SwitchTurnButton" type="Button" parent="Game/HUD/TurnScreen/Label"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -178,50 +173,96 @@ stream = ExtResource( 5 )
 [node name="CoinBox" type="HBoxContainer" parent="Game/HUD"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -71.0
-margin_bottom = 40.0
+margin_left = -557.95
+margin_top = 4.49493
+margin_right = -486.95
+margin_bottom = 44.4949
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CoinFlipBtn" type="Button" parent="Game/HUD/CoinBox"]
-margin_right = 67.0
-margin_bottom = 40.0
+[node name="TideBtn" type="Button" parent="Game/HUD"]
+margin_left = 321.302
+margin_top = 0.532055
+margin_right = 440.302
+margin_bottom = 42.5321
+text = "Pull Tide Card"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CoinFlipBtn" type="Button" parent="Game/HUD"]
+margin_left = 246.698
+margin_top = 0.12739
+margin_right = 313.698
+margin_bottom = 40.1274
 text = "Flip Coin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Game/HUD/CoinBox"]
-position = Vector2( -537.093, 267.947 )
-frames = SubResource( 8 )
-frame = 5
-playing = true
+[node name="LowCard" type="Sprite" parent="Game/HUD"]
+position = Vector2( 693.272, 286.196 )
+scale = Vector2( 0.40136, 0.340145 )
+texture = ExtResource( 14 )
 
-[node name="WinScreen" type="ColorRect" parent="Game/HUD"]
+[node name="LowLabel" type="Label" parent="Game/HUD/LowCard"]
+margin_left = -129.641
+margin_top = -87.068
+margin_right = -86.6405
+margin_bottom = -73.068
+text = "SPACE:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighCard" type="Sprite" parent="Game/HUD"]
+position = Vector2( 317.645, 287.821 )
+scale = Vector2( 0.379638, 0.339813 )
+texture = ExtResource( 13 )
+
+[node name="HighLabel" type="Label" parent="Game/HUD/HighCard"]
+margin_left = -168.0
+margin_top = 76.0
+margin_right = -110.0
+margin_bottom = 119.0
+text = "MOVE: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinBackground" type="ColorRect" parent="Game/HUD"]
+visible = false
+margin_right = 1020.0
+margin_bottom = 595.0
+color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinLabel" type="Label" parent="Game/HUD/WinBackground"]
 margin_left = 546.805
 margin_top = 270.883
-margin_right = 586.805
-margin_bottom = 310.883
-color = Color( 1, 1, 1, 0 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="WinLayout" type="VBoxContainer" parent="Game/HUD/WinScreen"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="WinLabel" type="Label" parent="Game/HUD/WinScreen/WinLayout"]
-margin_right = 56.0
-margin_bottom = 31.0
+margin_right = 602.805
+margin_bottom = 301.883
 text = "You Win!
 "
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Blackmoor-game" type="AudioStreamPlayer2D" parent="."]
+[node name="BlackmoorSong" type="AudioStreamPlayer2D" parent="Game"]
 stream = ExtResource( 12 )
 volume_db = -4.038
-[connection signal="pressed" from="Game/HUD/TurnScreen/BoxLayout/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1077.51, 166.189 )
+frames = SubResource( 8 )
+playing = true
+[connection signal="pressed" from="Game/HUD/TurnScreen/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/EndButton" to="Game" method="_on_EndButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/DiceButton" to="Game" method="_on_DiceButton_pressed"]
-[connection signal="pressed" from="Game/HUD/CoinBox/CoinFlipBtn" to="Game/Player" method="_on_CoinFlipBtn_pressed"]
+[connection signal="pressed" from="Game/HUD/TideBtn" to="Game/Player" method="_on_TideBtn_pressed"]
+[connection signal="pressed" from="Game/HUD/CoinFlipBtn" to="Game/Player" method="_on_CoinFlipBtn_pressed"]
