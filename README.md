@@ -59,6 +59,14 @@
     <td>Uploaded in-game assets</td>
     <td>Complete</td>
   </tr>
+  <tr>
+    <td>Movement and GameBoard</td>
+    <td>Complete</td>
+  </tr>
+  <tr>
+    <td>Unique Game Mechanics</td>
+    <td>Complete</td>
+  </tr>
 </table>
 <h2>Studio Credits </h2>
   <ul>
