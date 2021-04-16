@@ -1,0 +1,20 @@
+[gd_scene format=2]
+
+[node name="win-screen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1028.0
+margin_bottom = 608.0
+color = Color( 0.027451, 0.678431, 0.827451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 329.783
+margin_top = 90.1346
+margin_right = 665.783
+margin_bottom = 213.135
+text = "You win!"
+align = 1
+valign = 1
