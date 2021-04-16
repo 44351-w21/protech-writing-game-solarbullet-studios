@@ -91,6 +91,7 @@ player = 3
 [node name="HUD" type="CanvasLayer" parent="Game"]
 
 [node name="TurnScreen" type="TextureRect" parent="Game/HUD"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -5.0
