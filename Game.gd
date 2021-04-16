@@ -14,6 +14,7 @@ onready var space_label = $HUD/Hbox/SpaceLabel
 onready var diceButton= $HUD/Hbox/DiceButton
 onready var endButton = $HUD/Hbox/EndButton
 onready var flipButton = $HUD/CoinFlipBtn
+onready var turnScreen = $HUD/TurnScreen
 onready var switchLabel = $HUD/TurnScreen/Label
 onready var switchButton = $HUD/TurnScreen/Label/SwitchTurnButton
 onready var winLabel = $HUD/WinBackground/WinLabel
@@ -34,6 +35,7 @@ func _ready():
 	HighTide.visible = false
 	LowTide.visible = false
 	win.visible = false
+	turnScreen.visible = false
 	$BlackmoorSong.play()
 	
 
@@ -61,6 +63,7 @@ func _on_EndButton_pressed():
 	LowTide.visible = false
 	switchLabel.visible = true
 	switchButton.visible = true
+	turnScreen.visible = true
 
 
 func _on_SwitchTurnButton_pressed():
@@ -87,6 +90,7 @@ func _on_SwitchTurnButton_pressed():
 	enableCoin()
 	switchButton.visible = false
 	switchLabel.visible = false
+	turnScreen.visible = false
 	if GameState.currentPlayer.can_move == true:
 		flipButton.visible = false
 		visibleDice()

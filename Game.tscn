@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://GameBoard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -14,46 +14,51 @@
 [ext_resource path="res://assets/audio/Blackmoor Tides Loop.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/Cards/High-Tide.png" type="Texture" id=13]
 [ext_resource path="res://assets/Cards/Low-Tide.png" type="Texture" id=14]
+[ext_resource path="res://assets/ArchitectsDaughter-Regular.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://assets/photo-rock.jpg" type="Texture" id=16]
 
-[sub_resource type="AtlasTexture" id=1]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 64, 64 )
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 15 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 64, 64, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 128, 64, 64, 64 )
+region = Rect2( 64, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 0, 64, 64, 64 )
+region = Rect2( 128, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 3 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ],
 "loop": true,
@@ -85,14 +90,15 @@ player = 3
 
 [node name="HUD" type="CanvasLayer" parent="Game"]
 
-[node name="TurnScreen" type="ColorRect" parent="Game/HUD"]
+[node name="TurnScreen" type="TextureRect" parent="Game/HUD"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.75952
-margin_top = -1.54721
-margin_right = 1.75952
-margin_bottom = -1.54724
-color = Color( 0, 0, 0, 0 )
+margin_left = -5.0
+margin_top = -2.0
+margin_right = 1.0
+margin_bottom = -2.0
+texture = ExtResource( 16 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -102,6 +108,7 @@ margin_left = 424.985
 margin_top = 278.112
 margin_right = 568.985
 margin_bottom = 292.112
+custom_fonts/font = SubResource( 10 )
 text = "Time to switch Players"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -164,7 +171,7 @@ __meta__ = {
 [node name="Dice" type="AnimatedSprite" parent="Game/HUD/Hbox"]
 position = Vector2( 213.329, 17.8848 )
 scale = Vector2( 0.472294, 0.465724 )
-frames = SubResource( 7 )
+frames = SubResource( 8 )
 
 [node name="DiceNoise" type="AudioStreamPlayer2D" parent="Game/HUD/Hbox"]
 position = Vector2( 1.90735e-06, 1.90735e-06 )
@@ -202,6 +209,7 @@ __meta__ = {
 }
 
 [node name="LowCard" type="Sprite" parent="Game/HUD"]
+visible = false
 position = Vector2( 693.272, 286.196 )
 scale = Vector2( 0.40136, 0.340145 )
 texture = ExtResource( 14 )
@@ -217,6 +225,7 @@ __meta__ = {
 }
 
 [node name="HighCard" type="Sprite" parent="Game/HUD"]
+visible = false
 position = Vector2( 317.645, 287.821 )
 scale = Vector2( 0.379638, 0.339813 )
 texture = ExtResource( 13 )
@@ -259,8 +268,7 @@ volume_db = -4.038
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1077.51, 166.189 )
-frames = SubResource( 8 )
-frame = 3
+frames = SubResource( 9 )
 playing = true
 [connection signal="pressed" from="Game/HUD/TurnScreen/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/EndButton" to="Game" method="_on_EndButton_pressed"]
