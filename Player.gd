@@ -79,7 +79,7 @@ func movespace():
 			get_node("..").disableDiceBtn()
 			get_node("..").invisibleEnd()
 		57:
-			get_tree().change_scene("res://win-screen.tscn")
+			get_node("..").winLabel.visible = true
 		
 	space_num = (space_num + 1)
 	tween.interpolate_property(self, "position", position,
