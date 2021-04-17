@@ -17,7 +17,8 @@
 [ext_resource path="res://assets/ArchitectsDaughter-Regular.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://assets/photo-rock.jpg" type="Texture" id=16]
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=1]
+size = 32
 font_data = ExtResource( 15 )
 
 [sub_resource type="AtlasTexture" id=2]
@@ -109,7 +110,7 @@ margin_left = 424.985
 margin_top = 278.112
 margin_right = 568.985
 margin_bottom = 292.112
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 1 )
 text = "Time to switch Players"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -220,13 +221,13 @@ margin_left = -129.641
 margin_top = -87.068
 margin_right = -86.6405
 margin_bottom = -73.068
+custom_fonts/font = SubResource( 1 )
 text = "SPACE:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HighCard" type="Sprite" parent="Game/HUD"]
-visible = false
 position = Vector2( 317.645, 287.821 )
 scale = Vector2( 0.379638, 0.339813 )
 texture = ExtResource( 13 )
@@ -236,6 +237,7 @@ margin_left = -168.0
 margin_top = 76.0
 margin_right = -110.0
 margin_bottom = 119.0
+custom_fonts/font = SubResource( 1 )
 text = "MOVE: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -270,6 +272,7 @@ volume_db = -4.038
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1077.51, 166.189 )
 frames = SubResource( 9 )
+frame = 2
 playing = true
 [connection signal="pressed" from="Game/HUD/TurnScreen/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/EndButton" to="Game" method="_on_EndButton_pressed"]
