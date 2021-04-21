@@ -269,13 +269,18 @@ __meta__ = {
 stream = ExtResource( 12 )
 volume_db = -4.038
 
+[node name="DiceTimer" type="Timer" parent="Game"]
+wait_time = 0.5
+one_shot = true
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1077.51, 166.189 )
 frames = SubResource( 9 )
-frame = 2
+frame = 1
 playing = true
 [connection signal="pressed" from="Game/HUD/TurnScreen/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/EndButton" to="Game" method="_on_EndButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/DiceButton" to="Game" method="_on_DiceButton_pressed"]
 [connection signal="pressed" from="Game/HUD/TideBtn" to="Game/Player" method="_on_TideBtn_pressed"]
 [connection signal="pressed" from="Game/HUD/CoinFlipBtn" to="Game/Player" method="_on_CoinFlipBtn_pressed"]
+[connection signal="timeout" from="Game/DiceTimer" to="Game" method="_on_DiceTimer_timeout"]

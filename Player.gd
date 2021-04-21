@@ -31,8 +31,10 @@ func move(spaces):
 	for n in spaces:
 		if GameState.currentPlayer.can_move == true and GameState.currentPlayer.can_move2 == true:
 			movespace()
+			$SlideSound.play()
 			yield(tween, "tween_completed")
 			GameState.update_space_label(n)
+	$SlideSound.stop()
 	emit_signal("movedone")
 	
 	
@@ -162,7 +164,7 @@ func _on_TideBtn_pressed():
 	
 func timer():
 	var t = Timer.new()
-	t.set_wait_time(4)
+	t.set_wait_time(1)
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()

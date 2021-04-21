@@ -36,7 +36,7 @@ func _ready():
 	LowTide.visible = false
 	win.visible = false
 	turnScreen.visible = false
-	$BlackmoorSong.play()
+	# $BlackmoorSong.play()
 	
 
 func _on_DiceButton_pressed():
@@ -44,10 +44,7 @@ func _on_DiceButton_pressed():
 	diceButton.disabled = true
 	$HUD/Hbox/Dice.frame = dice
 	$HUD/Hbox/DiceNoise.play()
-	GameState.currentPlayer.move(dice + 1)
-	yield(GameState.currentPlayer, "movedone")
-	diceButton.visible = false
-	endButton.visible = true
+	$DiceTimer.start()
 
 func update_label():
 	player_label.text = GameState.currentPlayerLabel
@@ -125,3 +122,10 @@ func invisibleTide():
 	$HUD/TideBtn.visible = false
 func visibleTide():
 	$HUD/TideBtn.visible = true
+
+
+func _on_DiceTimer_timeout():
+	GameState.currentPlayer.move(dice + 1)
+	yield(GameState.currentPlayer, "movedone")
+	diceButton.visible = false
+	endButton.visible = true
