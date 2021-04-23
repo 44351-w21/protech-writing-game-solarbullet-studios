@@ -4,4 +4,13 @@ onready var winLabel = $ColorRect/Label
 
 func _ready():
 	var curPlayer = GameState.currentPlayer
-	winLabel.text = str(curPlayer) + " wins! Congratulations!"
+	winLabel.text =  "You win! Congratulations!"
+
+
+
+func _on_mainMenu_pressed():
+	get_tree().change_scene("res://title-screen.tscn")
+
+
+func _on_Restart_pressed():
+	get_tree().change_scene("res://Game.tscn")

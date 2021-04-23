@@ -49,7 +49,6 @@ func movespace():
 			can_move2 = false
 			get_node("..").disableDiceBtn()
 			get_node("..").visibleTide()
-			
 		14: direction = Vector2.DOWN
 		15:
 			can_move = false
@@ -81,7 +80,7 @@ func movespace():
 			get_node("..").disableDiceBtn()
 			get_node("..").invisibleEnd()
 		57:
-			get_node("..").winLabel.visible = true
+			get_tree().change_scene("res://Game.tscn")
 		
 	space_num = (space_num + 1)
 	tween.interpolate_property(self, "position", position,

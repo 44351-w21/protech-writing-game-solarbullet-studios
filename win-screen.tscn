@@ -24,3 +24,26 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="mainMenu" type="Button" parent="ColorRect"]
+modulate = Color( 0.0156863, 1, 0.447059, 1 )
+margin_left = 230.0
+margin_top = 400.0
+margin_right = 500.0
+margin_bottom = 480.0
+hint_tooltip = "Click this to go to the main menu"
+text = "Main Menu"
+
+[node name="Restart" type="Button" parent="ColorRect"]
+modulate = Color( 0.0156863, 1, 0.447059, 1 )
+margin_left = 570.0
+margin_top = 399.0
+margin_right = 880.0
+margin_bottom = 479.0
+hint_tooltip = "Click this to restart the game"
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ColorRect/mainMenu" to="." method="_on_mainMenu_pressed"]
+[connection signal="pressed" from="ColorRect/Restart" to="." method="_on_Restart_pressed"]
