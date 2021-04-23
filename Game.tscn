@@ -92,6 +92,7 @@ player = 3
 [node name="HUD" type="CanvasLayer" parent="Game"]
 
 [node name="TurnScreen" type="TextureRect" parent="Game/HUD"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -5.0
@@ -254,7 +255,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1077.51, 166.189 )
 frames = SubResource( 9 )
-frame = 5
+frame = 1
 playing = true
 [connection signal="pressed" from="Game/HUD/TurnScreen/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/EndButton" to="Game" method="_on_EndButton_pressed"]
