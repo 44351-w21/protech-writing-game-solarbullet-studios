@@ -255,7 +255,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1077.51, 166.189 )
 frames = SubResource( 9 )
-frame = 1
+frame = 3
 playing = true
 [connection signal="pressed" from="Game/HUD/TurnScreen/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/EndButton" to="Game" method="_on_EndButton_pressed"]

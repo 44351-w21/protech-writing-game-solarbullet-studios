@@ -17,7 +17,6 @@ onready var flipButton = $HUD/CoinFlipBtn
 onready var turnScreen = $HUD/TurnScreen
 onready var switchLabel = $HUD/TurnScreen/Label
 onready var switchButton = $HUD/TurnScreen/Label/SwitchTurnButton
-onready var winLabel = $HUD/WinBackground/WinLabel
 
 var next_player = ['', 'Player2', 'Player3', 'Player4', 'Player']
 var activePlayerIndex = 1
@@ -27,14 +26,12 @@ func _ready():
 	randomize()
 	GameState.currentPlayer = p1
 	GameState.currentPlayerLabel = "Player 1"
-	winLabel.visible = false
 	flipButton.visible = false
 	switchLabel.visible = false
 	invisibleTide()
 	update_label()
 	HighTide.visible = false
 	LowTide.visible = false
-	win.visible = false
 	turnScreen.visible = false
 	# $BlackmoorSong.play()
 	
