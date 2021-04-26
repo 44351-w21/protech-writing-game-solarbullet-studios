@@ -5,6 +5,7 @@ onready var winLabel = $ColorRect/Label
 func _ready():
 	var curPlayer = GameState.currentPlayer
 	winLabel.text =  "You win! Congratulations!"
+	$Music.play()
 
 
 
