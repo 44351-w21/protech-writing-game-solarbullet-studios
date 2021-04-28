@@ -24,7 +24,7 @@ signal movedone
 func _ready():
 	sprite.texture = sprites[player]
 	position.x = 32
-	position.y = 64
+	position.y = 80
 	
 func move(spaces):
 	get_node("..").enableCoin()

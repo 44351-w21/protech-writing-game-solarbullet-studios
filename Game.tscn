@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://GameBoard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -19,6 +19,9 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 15 )
 
 [sub_resource type="AtlasTexture" id=2]
@@ -78,15 +81,15 @@ script = ExtResource( 4 )
 position = Vector2( 16.6865, 68.3354 )
 
 [node name="Player2" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 47.411, 70.1894 )
+position = Vector2( 48.6738, 68.7863 )
 player = 1
 
 [node name="Player3" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 16.6865, 102.238 )
+position = Vector2( 15.1882, 109.261 )
 player = 2
 
 [node name="Player4" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 47.1461, 103.033 )
+position = Vector2( 48.4571, 109.963 )
 player = 3
 
 [node name="HUD" type="CanvasLayer" parent="Game"]
@@ -131,83 +134,84 @@ __meta__ = {
 }
 
 [node name="Hbox" type="HBoxContainer" parent="Game/HUD"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 130.0
+margin_bottom = 45.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SpaceLabel" type="Label" parent="Game/HUD/Hbox"]
-margin_top = 13.0
-margin_bottom = 27.0
+margin_top = 15.0
+margin_bottom = 29.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="EndButton" type="Button" parent="Game/HUD/Hbox"]
 visible = false
-margin_left = 234.081
-margin_top = -0.943878
-margin_right = 301.081
-margin_bottom = 39.0561
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 4.0
+margin_right = 82.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 10 )
 text = "End Turn"
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="DiceButton" type="Button" parent="Game/HUD/Hbox"]
+modulate = Color( 1, 0.415686, 1, 1 )
 margin_left = 4.0
-margin_right = 44.0
-margin_bottom = 40.0
-text = "Roll!"
+margin_right = 79.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 10 )
+text = "Roll Dice"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="PlayerLabel" type="Label" parent="Game/HUD/Hbox"]
-margin_left = 48.0
-margin_top = 13.0
-margin_right = 48.0
-margin_bottom = 27.0
+margin_left = 83.0
+margin_top = 15.0
+margin_right = 83.0
+margin_bottom = 29.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Dice" type="AnimatedSprite" parent="Game/HUD/Hbox"]
-position = Vector2( 213.329, 17.8848 )
-scale = Vector2( 0.472294, 0.465724 )
+position = Vector2( 246.849, 24.2122 )
+scale = Vector2( 0.708939, 0.688449 )
 frames = SubResource( 8 )
 
 [node name="DiceNoise" type="AudioStreamPlayer2D" parent="Game/HUD/Hbox"]
 position = Vector2( 1.90735e-06, 1.90735e-06 )
 stream = ExtResource( 5 )
 
-[node name="CoinBox" type="HBoxContainer" parent="Game/HUD"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -557.95
-margin_top = 4.49493
-margin_right = -486.95
-margin_bottom = 44.4949
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="TideBtn" type="Button" parent="Game/HUD"]
-margin_left = 321.302
-margin_top = 0.532055
-margin_right = 440.302
-margin_bottom = 42.5321
+modulate = Color( 0.415686, 0.933333, 1, 1 )
+margin_left = 361.309
+margin_top = -0.244923
+margin_right = 474.309
+margin_bottom = 44.7551
+custom_fonts/font = SubResource( 10 )
 text = "Pull Tide Card"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="CoinFlipBtn" type="Button" parent="Game/HUD"]
-margin_left = 246.698
-margin_top = 0.12739
-margin_right = 313.698
-margin_bottom = 40.1274
-text = "Flip Coin"
+modulate = Color( 1, 0.937255, 0.415686, 1 )
+margin_left = 277.2
+margin_right = 352.2
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 10 )
+text = "Coin Flip"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="LowCard" type="Sprite" parent="Game/HUD"]
@@ -217,10 +221,10 @@ scale = Vector2( 0.40136, 0.340145 )
 texture = ExtResource( 14 )
 
 [node name="LowLabel" type="Label" parent="Game/HUD/LowCard"]
-margin_left = -129.641
-margin_top = -87.068
-margin_right = -86.6405
-margin_bottom = -73.068
+margin_left = -130.0
+margin_top = -91.0
+margin_right = -20.0
+margin_bottom = -42.0
 custom_fonts/font = SubResource( 1 )
 text = "SPACE:"
 __meta__ = {
@@ -255,7 +259,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1077.51, 166.189 )
 frames = SubResource( 9 )
-frame = 3
+frame = 4
 playing = true
 [connection signal="pressed" from="Game/HUD/TurnScreen/Label/SwitchTurnButton" to="Game" method="_on_SwitchTurnButton_pressed"]
 [connection signal="pressed" from="Game/HUD/Hbox/EndButton" to="Game" method="_on_EndButton_pressed"]
