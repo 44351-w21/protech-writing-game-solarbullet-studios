@@ -43,6 +43,8 @@ func movespace():
 		0: direction = Vector2.RIGHT
 		7: 
 			can_move = false
+			get_node("../HUD/CoinFlipBtn/Heads").visible = false
+			get_node("../HUD/CoinFlipBtn/Tails").visible = false
 			get_node("..").disableDiceBtn()
 			get_node("..").flipButton.visible = true
 		11:
@@ -53,6 +55,8 @@ func movespace():
 		15:
 			can_move = false
 			get_node("..").disableDiceBtn()
+			get_node("../HUD/CoinFlipBtn/Heads").visible = false
+			get_node("../HUD/CoinFlipBtn/Tails").visible = false
 			get_node("..").flipButton.visible = true
 		19: 
 			can_move2 = false
@@ -61,6 +65,8 @@ func movespace():
 		20:direction = Vector2.LEFT
 		29:
 			can_move = false
+			get_node("../HUD/CoinFlipBtn/Heads").visible = false
+			get_node("../HUD/CoinFlipBtn/Tails").visible = false
 			get_node("..").disableDiceBtn()
 			get_node("..").flipButton.visible = true
 		33: direction = Vector2.UP
@@ -71,12 +77,16 @@ func movespace():
 		37: direction = Vector2.RIGHT
 		42:
 			can_move = false
+			get_node("../HUD/CoinFlipBtn/Heads").visible = false
+			get_node("../HUD/CoinFlipBtn/Tails").visible = false
 			get_node("..").disableDiceBtn()
 			get_node("..").flipButton.visible = true
 		48: direction = Vector2.DOWN
 		50: direction = Vector2.LEFT
 		51:
 			can_move = false
+			get_node("../HUD/CoinFlipBtn/Heads").visible = false
+			get_node("../HUD/CoinFlipBtn/Tails").visible = false
 			get_node("..").disableDiceBtn()
 			get_node("..").invisibleEnd()
 		57:
@@ -99,12 +109,16 @@ func getNum():
 func _on_CoinFlipBtn_pressed():
 	coin = randi() % 2
 	if coin == 0:
+		get_node("../HUD/CoinFlipBtn/Heads").visible = true
+		get_node("../HUD/CoinFlipBtn/Heads").play()
 		GameState.currentPlayer.can_move = true
 		GameState.currentPlayer.move(1)
 		get_node("..").disableCoin()
 		get_node("..").invisibleDice()
 		get_node("..").visibleEnd()
 	if coin == 1:
+		get_node("../HUD/CoinFlipBtn/Tails").visible = true
+		get_node("../HUD/CoinFlipBtn/Tails").play()
 		get_node("..").disableCoin()
 		get_node("..").invisibleDice()
 		get_node("..").visibleEnd()
