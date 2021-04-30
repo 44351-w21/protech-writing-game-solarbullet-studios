@@ -1,6 +1,7 @@
 <img src="https://i.imgur.com/1mUYjF4.png" width="300">
 <h1>Treasure Hunters</h1>
 <h2>Created By: SolarBullet Studios</h2>
+<h2> Designed By: Coral Cave & Co.</h2>
 <hr>
 <h2>Game Developers</h2>
 <ul>
