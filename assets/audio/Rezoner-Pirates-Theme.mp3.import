@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Rezoner-Pirates-Theme.mp3-8f3b303774641132e160926efec20137.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Rezoner-Pirates-Theme.mp3"
+dest_files=[ "res://.import/Rezoner-Pirates-Theme.mp3-8f3b303774641132e160926efec20137.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
